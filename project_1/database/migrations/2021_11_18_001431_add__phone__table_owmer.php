@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOwmerTable extends Migration
+class AddPhoneTableOwmer extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,8 @@ class CreateOwmerTable extends Migration
      */
     public function up()
     {
-        Schema::create('owner', function (Blueprint $table) {
-            $table->id();
-            $table->string("Name");
-            $table->boolean("Order");
-            $table->longText("Title");
-            $table->timestamps();
+        Schema::table('owner', function (Blueprint $table) {
+            $table->string("Phone")->after("Order");
         });
     }
 
@@ -29,6 +25,8 @@ class CreateOwmerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('owner');
+        Schema::table('owner', function (Blueprint $table) {
+            //
+        });
     }
 }

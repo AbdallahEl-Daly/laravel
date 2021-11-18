@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateOwmerTable extends Migration
+class CreateBossesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateOwmerTable extends Migration
      */
     public function up()
     {
-        Schema::create('owner', function (Blueprint $table) {
+        Schema::create('boss', function (Blueprint $table) {
             $table->id();
-            $table->string("Name");
-            $table->boolean("Order");
-            $table->longText("Title");
+            $table->string("Boss_Name");
+            $table->longText("Boos_Title");
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateOwmerTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('owner');
+        Schema::dropIfExists('bosses');
     }
 }
