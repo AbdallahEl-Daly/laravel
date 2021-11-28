@@ -16,10 +16,10 @@ class CreateProfileUsers extends Migration
         Schema::create('profile_users', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedBigInteger('user_id'); 
-            $table->string('City');
-            $table->string('Gender');
-            $table->longText('CV');
-            $table->longText('Linkedin');
+            $table->string('city');
+            $table->string('gender');
+            $table->longText('cv');
+            $table->longText('linkedin');
             $table->timestamps();
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');

@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
 class Profile extends Model
 {
     use HasFactory;
+    protected $table = 'profile_users';
     protected $fillable = [
-        'user_id', 'City', 'Gender', 'CV', 'Linkedin',
+        'user_id', 'city', 'gender', 'cv', 'linkedin',
     ];
 
     /**
